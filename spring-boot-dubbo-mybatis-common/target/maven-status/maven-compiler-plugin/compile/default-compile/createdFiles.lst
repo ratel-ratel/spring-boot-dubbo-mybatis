@@ -1,0 +1,8 @@
+com\uvanix\common\dto\result\Result.class
+com\uvanix\common\dto\request\PagedRequest.class
+com\uvanix\common\dto\request\BaseRequest.class
+com\uvanix\common\dto\request\Request.class
+com\uvanix\common\dto\result\PagedResult$Builder.class
+com\uvanix\common\dto\result\PagedResult.class
+com\uvanix\common\dto\result\BaseResult.class
+com\uvanix\common\dto\result\ResultCode.class

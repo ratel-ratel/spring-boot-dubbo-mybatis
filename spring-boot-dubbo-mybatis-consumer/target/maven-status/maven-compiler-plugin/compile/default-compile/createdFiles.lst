@@ -1,0 +1,6 @@
+com\uvanix\consumer\service\biz\AccountBizService.class
+com\uvanix\consumer\service\dubbo\DubboSupport.class
+com\uvanix\consumer\web\ServerStatusHandler.class
+com\uvanix\consumer\Application.class
+com\uvanix\consumer\service\biz\impl\AccountBizServiceImpl.class
+com\uvanix\consumer\config\DubboConfig.class

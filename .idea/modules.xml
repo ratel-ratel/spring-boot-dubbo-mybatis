@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-mybatis.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-mybatis-api/spring-boot-dubbo-mybatis-api.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-mybatis-api/spring-boot-dubbo-mybatis-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-mybatis-common/spring-boot-dubbo-mybatis-common.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-mybatis-common/spring-boot-dubbo-mybatis-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-mybatis-consumer/spring-boot-dubbo-mybatis-consumer.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-mybatis-consumer/spring-boot-dubbo-mybatis-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-mybatis-server/spring-boot-dubbo-mybatis-server.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-mybatis-server/spring-boot-dubbo-mybatis-server.iml" />
+    </modules>
+  </component>
+</project>

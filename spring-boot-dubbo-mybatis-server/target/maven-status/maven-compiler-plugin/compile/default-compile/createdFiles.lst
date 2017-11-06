@@ -1,0 +1,15 @@
+com\uvanix\server\web\ServerStatusHandler.class
+com\uvanix\server\service\biz\AccountBizService.class
+com\uvanix\server\dao\entity\AccountExample$Criterion.class
+com\uvanix\server\dao\mapper\DatabaseMapper.class
+com\uvanix\server\dao\entity\Account.class
+com\uvanix\server\dao\entity\AccountExample$GeneratedCriteria.class
+com\uvanix\server\Application.class
+com\uvanix\server\service\biz\impl\DatabaseServiceImpl.class
+com\uvanix\server\service\biz\DatabaseService.class
+com\uvanix\server\dao\entity\AccountExample$Criteria.class
+com\uvanix\server\dao\mapper\AccountMapper.class
+com\uvanix\server\service\biz\impl\AccountBizServiceImpl.class
+com\uvanix\server\config\DubboConfig.class
+com\uvanix\server\dao\entity\AccountExample.class
+com\uvanix\server\service\dubbo\api\account\AccountServiceImpl.class
