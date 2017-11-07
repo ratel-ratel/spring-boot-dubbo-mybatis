@@ -1,10 +1,13 @@
 package com.uvanix.consumer.web;
 
 import com.uvanix.api.account.AccountQueryPageRequest;
+import com.uvanix.common.dto.request.PagedRequest;
 import com.uvanix.common.dto.request.Request;
+import com.uvanix.common.dto.result.PageResponse;
 import com.uvanix.common.dto.result.PagedResult;
 import com.uvanix.common.dto.result.Result;
 import com.uvanix.consumer.service.biz.AccountBizService;
+import com.uvanix.entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.HttpRequestHandler;
@@ -17,6 +20,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * 服务状态
@@ -42,4 +46,30 @@ public class ServerStatusHandler implements HttpRequestHandler {
         PagedResult<String> pagedResult = accountBizService.queryNamesPaging(pagedRequest);
         return pagedResult;
     }
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    @ResponseBody
+    public int insert(@RequestBody Account account) {
+        return accountBizService.insert(account);
+    }
+    @RequestMapping(value = "/page", method = RequestMethod.POST)
+    @ResponseBody
+    public PageResponse page(@RequestBody PagedRequest result) {
+        return accountBizService.page(result);
+    }
+    @RequestMapping(value = "/deleteById", method = RequestMethod.POST)
+    @ResponseBody
+    public int deleteById(@RequestBody Account account) {
+        return accountBizService.deleteById(account.getId());
+    }
+    @RequestMapping(value = "/updateById", method = RequestMethod.POST)
+    @ResponseBody
+    public int updateById(@RequestBody Account record) {
+        return accountBizService.updateById(record);
+    }
+    @RequestMapping(value = "/selectById", method = RequestMethod.POST)
+    @ResponseBody
+    public Account selectById(@RequestBody Account account) {
+        return accountBizService.selectById(account.getId());
+    }
+
 }

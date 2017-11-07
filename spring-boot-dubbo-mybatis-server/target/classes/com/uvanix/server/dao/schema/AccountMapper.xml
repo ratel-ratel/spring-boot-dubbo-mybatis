@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.uvanix.server.dao.mapper.AccountMapper">
-  <resultMap id="BaseResultMap" type="com.uvanix.server.dao.entity.Account">
+  <resultMap id="BaseResultMap" type="com.uvanix.entity.Account">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
@@ -81,13 +81,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="page" parameterType="com.uvanix.common.dto.request.PagedRequest" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from account
+    <if test="param.startIndex != null and param.pageSize != null">
+      limit limit #{param.currentPage},#{param.pageSize}
+    </if>
+
+  </select>
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 'true' as QUERYID,
     <include refid="Base_Column_List" />
     from account
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteById" parameterType="java.lang.Integer">
     delete from account
     where id = #{id,jdbcType=INTEGER}
   </delete>
@@ -97,11 +106,11 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.uvanix.server.dao.entity.Account">
+  <insert id="insert" parameterType="com.uvanix.entity.Account">
     insert into account (id, `name`)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.uvanix.server.dao.entity.Account">
+  <insert id="insertSelective" parameterType="com.uvanix.entity.Account">
     insert into account
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -148,7 +157,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uvanix.server.dao.entity.Account">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uvanix.entity.Account">
     update account
     <set>
       <if test="name != null">
@@ -157,7 +166,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uvanix.server.dao.entity.Account">
+  <update id="updateById" parameterType="com.uvanix.entity.Account">
     update account
     set `name` = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

@@ -1,4 +1,4 @@
-package com.uvanix.server.dao.entity;
+package com.uvanix.entity;
 
 import java.io.Serializable;
 

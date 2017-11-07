@@ -20,6 +20,15 @@ public class PagedRequest<T> extends BaseRequest {
      * 当前页大小，默认10条
      */
     private int pageSize = DEFAULT_PAGE_SIZE;
+    private int startIndex;
+
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    public void setStartIndex(int startIndex) {
+        this.startIndex = (currentPage-1)*currentPage;
+    }
 
     /**
      * 是否查询全部，此参数为true，则会忽略page和pageSize参数

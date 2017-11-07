@@ -1,6 +1,5 @@
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\dao\mapper\DatabaseMapper.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\service\dubbo\api\account\AccountServiceImpl.java
-E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\dao\entity\Account.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\Application.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\service\biz\impl\AccountBizServiceImpl.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-server\src\main\java\com\uvanix\server\service\biz\DatabaseService.java

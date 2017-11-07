@@ -1,2 +1,3 @@
 com\uvanix\api\account\AccountQueryPageRequest.class
 com\uvanix\api\account\AccountService.class
+com\uvanix\entity\Account.class

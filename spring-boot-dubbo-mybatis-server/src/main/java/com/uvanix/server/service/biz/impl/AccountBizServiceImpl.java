@@ -1,16 +1,19 @@
 package com.uvanix.server.service.biz.impl;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.uvanix.api.account.AccountQueryPageRequest;
+import com.uvanix.common.dto.request.PagedRequest;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PagedResult;
 import com.uvanix.common.dto.result.Result;
 import com.uvanix.common.dto.result.ResultCode;
-import com.uvanix.server.dao.entity.Account;
+import com.uvanix.entity.Account;
 import com.uvanix.server.dao.entity.AccountExample;
 import com.uvanix.server.dao.mapper.AccountMapper;
 import com.uvanix.server.service.biz.AccountBizService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -23,6 +26,7 @@ import java.util.stream.Collectors;
  * 服务接口业务逻辑
  */
 @Service
+@Slf4j
 public class AccountBizServiceImpl implements AccountBizService {
 
     @Autowired
@@ -34,8 +38,34 @@ public class AccountBizServiceImpl implements AccountBizService {
     }
 
     @Override
+    public List<Account> page(PagedRequest result) {
+        log.info("Account  page request "+ JSONUtils.toJSONString(result));
+        List<Account> page = accountMapper.page(result);
+        log.info("Account  page back "+ JSONUtils.toJSONString(page));
+        return page;
+    }
+
+    @Override
+    public int deleteById(Integer id) {
+        int deleteById = accountMapper.deleteById(id);
+        return deleteById;
+    }
+
+    @Override
+    public int updateById(Account record) {
+        int updateById = accountMapper.updateById(record);
+        return updateById;
+    }
+
+    @Override
+    public Account selectById(Integer id) {
+        Account selectById = accountMapper.selectById(id);
+        return selectById;
+    }
+
+    @Override
     public Result<String> queryNameById(Request<Integer> request) {
-        Account account = accountMapper.selectByPrimaryKey(request.getData());
+        Account account = accountMapper.selectById(request.getData());
         if (Objects.isNull(account)) {
             return Result.<String>create().ssid(request.getSsid())
                     .fail(ResultCode.DATA_NOT_EXIST.getCode(), ResultCode.DATA_NOT_EXIST.getMessage());
@@ -64,4 +94,6 @@ public class AccountBizServiceImpl implements AccountBizService {
         return PagedResult.Builder.build(pagedRequest)
                 .buildForSuccess(pageInfo.getPages(), pageInfo.getTotal(), resultList);
     }
+
+
 }

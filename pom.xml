@@ -13,12 +13,12 @@
     <description>springboot integrate dubbo and mybatis.</description>
     <inceptionYear>2017</inceptionYear>
 
-    <modules>
-        <module>spring-boot-dubbo-mybatis-common</module>
-        <module>spring-boot-dubbo-mybatis-api</module>
-        <module>spring-boot-dubbo-mybatis-server</module>
-        <module>spring-boot-dubbo-mybatis-consumer</module>
-    </modules>
+    <!--<modules>-->
+        <!--<module>spring-boot-dubbo-mybatis-common</module>-->
+        <!--<module>spring-boot-dubbo-mybatis-api</module>-->
+        <!--<module>spring-boot-dubbo-mybatis-server</module>-->
+        <!--<module>spring-boot-dubbo-mybatis-consumer</module>-->
+    <!--</modules>-->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
