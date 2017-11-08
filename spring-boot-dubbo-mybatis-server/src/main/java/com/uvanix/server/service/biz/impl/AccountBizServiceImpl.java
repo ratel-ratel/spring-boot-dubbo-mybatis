@@ -3,7 +3,6 @@ package com.uvanix.server.service.biz.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.uvanix.api.account.AccountQueryPageRequest;
-import com.uvanix.common.dto.request.PagedRequest;
 import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PagedResult;
@@ -40,6 +39,12 @@ public class AccountBizServiceImpl implements AccountBizService {
     @Override
     public List<Account> page(Pageparam result) {
         //log.info("Account  page request "+ JSONUtils.toJSONString(result));
+        if (null != result && null != result.getPageNumber() && null != result.getPageSize()) {
+            Integer pageNumber = result.getPageNumber();
+            pageNumber= pageNumber>0?pageNumber:1;
+            Integer startRow=(pageNumber-1)*result.getPageSize();
+            result.setStartRow(startRow);
+        }
         List<Account> page = accountMapper.page(result);
         //log.info("Account  page back "+ JSONUtils.toJSONString(page));
         return page;

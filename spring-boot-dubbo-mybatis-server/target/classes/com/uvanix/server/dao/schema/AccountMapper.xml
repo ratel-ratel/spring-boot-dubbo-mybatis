@@ -86,7 +86,7 @@
     <include refid="Base_Column_List" />
     from account
     <if test="param.pageSize != null">
-      limit  #{param.pageNumber},#{param.pageSize}
+      limit  #{param.startRow},#{param.pageSize}
     </if>
   </select>
   <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
