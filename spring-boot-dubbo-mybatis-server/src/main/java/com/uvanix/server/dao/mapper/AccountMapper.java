@@ -1,6 +1,7 @@
 package com.uvanix.server.dao.mapper;
 
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.result.PagedResult;
 import com.uvanix.entity.Account;
 import com.uvanix.server.dao.entity.AccountExample;
@@ -16,8 +17,8 @@ public interface AccountMapper {
     int deleteById(Integer id);
     int updateById(Account record);
     Account selectById(Integer id);
-    List<Account> page(@Param("param") PagedRequest result);
-
+    List<Account> page(@Param("param") Pageparam result);
+    int getTotal();
     int insertSelective(Account record);
 
     List<Account> selectByExample(AccountExample example);

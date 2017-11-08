@@ -2,6 +2,7 @@ package com.uvanix.consumer.service.biz;
 
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PageResponse;
 import com.uvanix.common.dto.result.PagedResult;
@@ -35,7 +36,7 @@ public interface AccountBizService {
      * @param result
      * @return
      */
-    PageResponse page(PagedRequest result);
+    List<Account> page(Pageparam result);
 
     /**
      * 主键删除
@@ -57,4 +58,5 @@ public interface AccountBizService {
      * @return
      */
     Account selectById(Integer id);
+    int getTotal();
 }

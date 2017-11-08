@@ -5,6 +5,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.api.account.AccountService;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PageResponse;
 import com.uvanix.common.dto.result.PagedResult;
@@ -30,7 +31,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public PageResponse page(PagedRequest result) {
+    public List<Account> page(Pageparam result) {
         PageResponse pageResponse=new PageResponse();
         List<Account> page = accountBizService.page(result);
         if (CollectionUtils.isNotEmpty(page)){
@@ -38,7 +39,7 @@ public class AccountServiceImpl implements AccountService {
             pageResponse.setMessage(ReturnCodeEnum.CODE_1000.getValue());
             pageResponse.setRecords(page);
         }
-        return pageResponse;
+        return page;
     }
 
     @Override
@@ -54,6 +55,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account selectById(Integer id) {
         return accountBizService.selectById(id);
+    }
+
+    @Override
+    public int getTotal() {
+        return accountBizService.getTotal();
     }
 
     /**

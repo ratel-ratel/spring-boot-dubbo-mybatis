@@ -2,6 +2,7 @@ package com.uvanix.server.service.biz;
 
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PagedResult;
 import com.uvanix.common.dto.result.Result;
@@ -21,11 +22,12 @@ public interface AccountBizService {
 
     int insert(Account account);
 
-    List<Account> page(PagedRequest result);
+    List<Account> page(Pageparam result);
 
     int deleteById(Integer id);
 
     int updateById(Account record);
 
     Account selectById(Integer id);
+    int getTotal();
 }

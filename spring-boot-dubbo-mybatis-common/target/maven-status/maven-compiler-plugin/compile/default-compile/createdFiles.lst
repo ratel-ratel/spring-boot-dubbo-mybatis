@@ -1,3 +1,4 @@
+com\uvanix\common\dto\request\Pageparam.class
 com\uvanix\common\dto\result\PageResponse.class
 com\uvanix\common\dto\result\Result.class
 com\uvanix\common\dto\request\Request.class

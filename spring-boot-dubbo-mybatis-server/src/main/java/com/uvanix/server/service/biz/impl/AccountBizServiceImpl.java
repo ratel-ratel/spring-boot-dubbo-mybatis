@@ -1,10 +1,10 @@
 package com.uvanix.server.service.biz.impl;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PagedResult;
 import com.uvanix.common.dto.result.Result;
@@ -38,10 +38,10 @@ public class AccountBizServiceImpl implements AccountBizService {
     }
 
     @Override
-    public List<Account> page(PagedRequest result) {
-        log.info("Account  page request "+ JSONUtils.toJSONString(result));
+    public List<Account> page(Pageparam result) {
+        //log.info("Account  page request "+ JSONUtils.toJSONString(result));
         List<Account> page = accountMapper.page(result);
-        log.info("Account  page back "+ JSONUtils.toJSONString(page));
+        //log.info("Account  page back "+ JSONUtils.toJSONString(page));
         return page;
     }
 
@@ -61,6 +61,11 @@ public class AccountBizServiceImpl implements AccountBizService {
     public Account selectById(Integer id) {
         Account selectById = accountMapper.selectById(id);
         return selectById;
+    }
+
+    @Override
+    public int getTotal() {
+        return accountMapper.getTotal();
     }
 
     @Override

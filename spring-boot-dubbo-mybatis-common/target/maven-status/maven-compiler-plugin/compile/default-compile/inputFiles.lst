@@ -1,12 +1,13 @@
-E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\request\Request.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\BaseResponse.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\PageResponse.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\Result.java
-E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\PagedResult.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\request\PagedRequest.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\BaseResult.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\request\BaseRequest.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\ResultCode.java
+E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\PageDataResponse.java
+E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\request\Pageparam.java
+E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\request\Request.java
+E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\PagedResult.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\util\BackResponseUtil.java
 E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\util\ReturnCodeEnum.java
-E:\github\spring-boot-dubbo-mybatis\spring-boot-dubbo-mybatis-common\src\main\java\com\uvanix\common\dto\result\PageDataResponse.java

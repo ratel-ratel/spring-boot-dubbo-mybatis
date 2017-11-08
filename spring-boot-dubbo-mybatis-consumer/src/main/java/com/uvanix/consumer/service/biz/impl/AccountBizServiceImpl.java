@@ -2,6 +2,7 @@ package com.uvanix.consumer.service.biz.impl;
 
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PageResponse;
 import com.uvanix.common.dto.result.PagedResult;
@@ -36,7 +37,7 @@ public class AccountBizServiceImpl implements AccountBizService {
         return dubboSupport.accountService.insert(account);
     }
     @Override
-    public PageResponse page(PagedRequest result) {
+    public  List<Account> page(Pageparam result) {
         return dubboSupport.accountService.page(result);
     }
 
@@ -53,5 +54,10 @@ public class AccountBizServiceImpl implements AccountBizService {
     @Override
     public Account selectById(Integer id) {
         return dubboSupport.accountService.selectById(id);
+    }
+
+    @Override
+    public int getTotal() {
+        return dubboSupport.accountService.getTotal();
     }
 }

@@ -2,6 +2,7 @@ package com.uvanix.consumer.web;
 
 import com.uvanix.api.account.AccountQueryPageRequest;
 import com.uvanix.common.dto.request.PagedRequest;
+import com.uvanix.common.dto.request.Pageparam;
 import com.uvanix.common.dto.request.Request;
 import com.uvanix.common.dto.result.PageResponse;
 import com.uvanix.common.dto.result.PagedResult;
@@ -53,8 +54,8 @@ public class ServerStatusHandler implements HttpRequestHandler {
     }
     @RequestMapping(value = "/page", method = RequestMethod.POST)
     @ResponseBody
-    public PageResponse page(@RequestBody PagedRequest result) {
-        return accountBizService.page(result);
+    public List<Account> page(@RequestBody Pageparam pageparam) {
+        return accountBizService.page(pageparam);
     }
     @RequestMapping(value = "/deleteById", method = RequestMethod.POST)
     @ResponseBody
@@ -71,5 +72,9 @@ public class ServerStatusHandler implements HttpRequestHandler {
     public Account selectById(@RequestBody Account account) {
         return accountBizService.selectById(account.getId());
     }
-
+    @RequestMapping(value = "/getTotal", method = RequestMethod.GET)
+    @ResponseBody
+    public int getTotal() {
+        return accountBizService.getTotal();
+    }
 }
